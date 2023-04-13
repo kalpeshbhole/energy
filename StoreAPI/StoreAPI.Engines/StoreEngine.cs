@@ -28,6 +28,12 @@ namespace StoreAPI.Engines
             return _mapper.Map<IEnumerable<Store>>(stores);
         }
 
+        async Task<Store> IStoreEngine.GetStoreByIdAsync(int storeId)
+        {
+            var store = await _storeRepository.GetStoreByIdAsync(storeId);
+            return _mapper.Map<Store>(store);
+        }
+
         async Task<IEnumerable<Store>> IStoreEngine.GetStoresByStateIdAsync(int stateId)
         {
             var stores = await _storeRepository.GetStoresByStateIdAsync(stateId);

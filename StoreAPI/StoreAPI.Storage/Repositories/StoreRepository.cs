@@ -39,6 +39,15 @@ namespace StoreAPI.Storage.Repositories
             }
         }
 
+        public async Task<Store> GetStoreByIdAsync(int storeId)
+        {
+            using (var connection = _connectionFactory.GetDbConnection())
+            {
+                var sqlProc = "spStore_Get";
+                return await connection.QueryFirstOrDefaultAsync<Store>(sqlProc, new { StoreId = storeId }, commandType: CommandType.StoredProcedure);
+            }
+        }
+
         public async Task<IEnumerable<Store>> GetStoresByStateIdAsync(int stateId)
         {
             using (var connection = _connectionFactory.GetDbConnection())

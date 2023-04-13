@@ -28,6 +28,13 @@ namespace StoreAPI.Controllers.v1
             return Ok(_mapper.Map<IEnumerable<Store>>(stores));
         }
 
+        [HttpGet("{storeId}")]
+        public async Task<ActionResult> GetById(int storeId)
+        {
+            var stores = await _storeEngine.GetStoreByIdAsync(storeId);
+            return Ok(_mapper.Map<Store>(stores));
+        }
+
         [HttpGet("state/{stateId}")]
         public async Task<ActionResult> Get(int stateId)
         {
