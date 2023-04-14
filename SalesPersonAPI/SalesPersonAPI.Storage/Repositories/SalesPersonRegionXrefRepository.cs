@@ -23,6 +23,7 @@ namespace SalesPersonAPI.Storage.Repositories
                     SalesPersonId = salesPersonRegionXref.SalesPersonId,
                     CityId = salesPersonRegionXref.CityId,
                     StateId = salesPersonRegionXref.StateId,
+                    CountryId = salesPersonRegionXref.CountryId,
                     IsPrimary = salesPersonRegionXref.IsPrimary,
                     UserId = salesPersonRegionXref.CreateByUserId
                 };

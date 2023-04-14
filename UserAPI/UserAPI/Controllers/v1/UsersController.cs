@@ -62,6 +62,16 @@ namespace UserAPI.Controllers.v1
         }
 
         [AllowAnonymous]
+        [HttpPost("logout")]
+        public IActionResult Logout()
+        {
+            return Ok(new
+            {
+                Token = ""
+            });
+        }
+
+            [AllowAnonymous]
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] User model)
         {

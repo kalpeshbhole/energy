@@ -31,6 +31,7 @@ namespace SalesPersonAPI.Engines
                 {
                     SalesPersonId = salesPersonId,
                     StateId = region.StateId,
+                    CountryId = region.CountryId,
                     IsPrimary = region.IsPrimary,
                     CreateByUserId = salesPerson.CreateByUserId
 

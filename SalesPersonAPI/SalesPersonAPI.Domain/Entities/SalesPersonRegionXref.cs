@@ -8,6 +8,8 @@
         public String City { get; set; }
         public int StateId { get; set; }
         public String State { get; set; }
+        public int CountryId { get; set; }
+        public String Country { get; set; }
         public bool IsPrimary { get; set; }
         public int CreateByUserId { get; set; }
         public string? CreateByUser { get; set; }
